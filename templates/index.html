@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokemons!</title>
+</head>
+<body>
+<h1>Pick Pokemon Colour</h1>
+<h2>Enter a colour to see which Pokemons are a match!</h2>
+<div>
+    <form action="/pokemon" method="POST">
+        <label for="pokecolour">Pokemon Colour</label>
+        <input type="text" id="pokecolour" name="pokecolour" placeholder="Eg: Black">
+        <button type="submit" value="Submit">Submit</button>
+    </form>
+</div>
+<div>
+    {% if pokemon %}
+    <table>
+        <thead>
+        <tr>
+            <th>Pokemon</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for i in pokemon %}
+        <tr>
+            <td>{{ i }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</div>
+</body>
+</html>
